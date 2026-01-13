@@ -1,4 +1,4 @@
-##Try to draw 2 triangles next to each other using glDrawArrays by adding more vertices to your data
+## Try to draw 2 triangles next to each other using glDrawArrays by adding more vertices to your data
 
 float vertices[] = {
 	0.1f, 0.0f, 0.0f,
