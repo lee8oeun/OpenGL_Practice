@@ -34,5 +34,19 @@ glVertexAttribPointer(1,3,GL_FLOAT,GL_FLASE,6*sizeof(float),(void*)(3*sizeof(flo
 glEnableVertexAttribArray(1);
 ```
 💡```cppglVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,6*sizeof(float),(void*)0);```<br>
-glVertexAttribPointer 함수 : VBO에 저장된 데이터를 셰이더의 입력 변수
+```glVertexAttribPointer 함수``` : VBO에 저장된 데이터를 셰이더의 입력 변수에 연결하는 역할  
+```index=0``` : 셰이더의 ```cpplayout(location=0)```->```aPos```에 연결  
+```size = 3``` : x,y,z -> 3개의 flaot type
+```type=GL_FLOAT``` : 데이터 타입은 FLOAT  
+```nomalized = GL_FALSE``` : 정규화 X  
+``` ⭐stride=6*sizeof(float)``` : 한 정점의 전체 크기 (위치 3 + 색상 3 = 6개 float = 24byte)  
+```pointer = (void*)0``` :위치 데이터는 정점의 시작 위치에 있음 (offset=0)  
+<br>  
+**🎀해석해보기**<br>
+```glVertexAttribPointer(1, 3, GL_FLOAT, GL_FLASE, 6 * sizeof(float), (void*)(3 * sizeof(float)));```  
+버텍스 쉐이더에의 location=1에 해당하는 변수에 연결, abc 3개, 데이터타입 float, 정규화 x, 한 정점의 전체크기 6, 색상 데이터는 위치 데이터 다음에 시작하니*3  
+<br>  
+<img width="592" height="526" alt="image" src="https://github.com/user-attachments/assets/b613fdbc-bf01-449c-9f0f-29b68c2e906b" />
+
+
 
